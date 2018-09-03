@@ -7,6 +7,21 @@
     <title>Optional Parameters</title>
 </head>
 <body>
+    <script>
+        function calculateTax(valor, pais){
+            pais = pais || "Portugal";
+            console.log("ES5. Calculate tax for residents in " + pais + " the value " + valor);
+        }
+
+        calculateTax(5000, "Espanha");
+
+        function calculateTaxES6(valor, pais = "Portugal"){
+            console.log(`ES6. 
+                        Calculate tax for residents in ${pais} the value ${valor}`);
+        }
+        
+        calculateTaxES6(5000);
+    </script>
     
 </body>
 </html>
