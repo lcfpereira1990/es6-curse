@@ -30,6 +30,7 @@
         let priceGenerator = getStockPrice("Google");
         const limitPrice = 15;
         let price = 100;
+        
 
         while (price > limitPrice){
             price = priceGenerator.next().value;
