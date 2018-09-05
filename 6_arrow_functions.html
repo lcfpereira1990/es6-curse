@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrow functions </title>
+</head>
+<body>
+    <script>
+        /* function StockQuoteGenerator(symbol){
+            this.symbol = symbol;
+            console.log(this.symbol);
+
+            setInterval(function(){
+                console.log("The price of" + this.symbol + " is " + Math.random());
+            }, 1000);
+            
+         }
+        
+        const stockQuoteGenerator = new StockQuoteGenerator("Rumos");*/
+        
+        /* function StockQuoteGenerator(symbol){
+             const that = this;
+            this.symbol = symbol;
+            console.log(this.symbol);
+
+            setInterval(function(){
+                console.log(`The price of ${that.symbol} is ${Math.random()}`);
+            }, 1000);
+            
+        }
+
+        const stockQuoteGenerator = new StockQuoteGenerator("Rumos");
+        
+         function StockQuoteGenerator(symbol){
+            this.symbol = symbol;
+            setInterval(()=>{
+                console.log(`The price of ${this.symbol} is ${Math.random()}`);
+            }, 1000);
+            
+        }
+        
+        const stockQuoteGenerator = new StockQuoteGenerator("Rumos");*/
+
+        function printSong(){
+            console.log("Oops - Global Object");
+        }
+
+        const jukebox = {
+            songs: [
+                { title: "Four Seasons",  artist: "Vivaldi"},
+                { title: "Moonlight",  artist: "Vivaldi"}
+            ],
+            printSong: function (song){
+                console.log(song.title + " - " + song.artist);
+            },
+            /* printSongs: function(){
+                this.songs.forEach(function(song){
+                    this.printSong(song);
+                });
+            }  --> Oops - Global Object*/ 
+
+            printSongs: function(){
+                this.songs.forEach(song => this.printSong(song));
+            }
+        }
+        
+        jukebox.printSongs();
+
+    </script>
+    
+</body>
+</html>
