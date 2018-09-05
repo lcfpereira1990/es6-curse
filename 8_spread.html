@@ -7,6 +7,25 @@
     <title>Spread</title>
 </head>
 <body>
+    <script>
+    
+        let linha = [0, 0, 2, 0, 2];
+        let teste = [2, 4, ...linha, 12];
+
+        console.log(teste);
+
+        let ordenada = [
+            ...linha.filter(n => n ==0),
+            ...linha.filter(n => n != 0)
+            ];
+
+        console.log(ordenada);    
+
+        const p = { name: "John", lastName: "Doe" };
+        const clone = { ...p, name: "Jane" }; // to clone p and change name property
+
+        console.log(p, clone);
+    </script>
     
 </body>
 </html>
