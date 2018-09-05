@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rest Operator</title>
+</head>
+<body>
+    <script>
+        function calcTaxES5(){
+            
+            //If you want to split income from customers
+            const income = arguments[0];
+            const customers = [].slice.call(arguments, 1);
+
+            //If you want to show them all - arguments is a reserved word thar contains all arguments of the funcion
+            console.log(arguments);
+        }
+        
+        calcTaxES5(1000, "A", "B", "C");
+
+        //... -> rest operator
+        function calcTaxES6(income, ...customers){
+            console.log(income, customers);
+        }
+
+        calcTaxES6(1000, "A", "B", "C");
+    </script>
+</body>
+</html>
